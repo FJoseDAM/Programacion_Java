@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class letra {
+    public static void main(String[] args) {
+
+        String palabraLeida = "";
+        int totalPalabra = 0;
+        int tamMaxPalabra = 0;
+        int tamPalabraLeida = 0;
+        Scanner teclado = new Scanner(System.in);
+
+        // Lectura (adelantada)
+        System.out.println("Introduzca una palabra: ");
+        palabraLeida = teclado.nextLine();
+        tamPalabraLeida = palabraLeida.length();
+        
+        // Proceso
+        while(tamPalabraLeida > 0){
+            System.out.println("Tamaño de palabra leida: " + tamPalabraLeida);
+            if(tamPalabraLeida > tamMaxPalabra) {
+                tamMaxPalabra = tamPalabraLeida;
+            }
+
+            totalPalabra++;
+            // Lectura
+            System.out.println("Introduzca una palabra: ");
+            palabraLeida = teclado.nextLine();
+            tamPalabraLeida = palabraLeida.length();
+            System.out.println("Tamaño de palabra leida: " + tamPalabraLeida);
+
+        }
+
+        System.out.println("Total palabras leídas: " + totalPalabra);
+        System.out.println("Tamaño máximo de palabra: " + tamMaxPalabra);
+    }
+}
